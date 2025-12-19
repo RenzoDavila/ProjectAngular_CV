@@ -10,7 +10,6 @@
 .sidebar
   width: 100%
   padding: 0px !important
-  border-right: 4px solid #DCC9A9 // Border for the inventory panel
   background-color: #1a1a1a
 
 .active
@@ -32,8 +31,11 @@
   padding-bottom: 3px
   text-decoration: none !important
   border-left: 2px dashed #DCC9A9 // Hierarchy indicator
+  a
+    color: #DCC9A9
 
 .subData:hover
+  background-color: #DCC9A9 !important
   a
     text-decoration: underline !important
     color: #B83A2D !important // Highlight on hover
@@ -41,8 +43,11 @@
 .selected
   text-decoration: underline !important
   font-weight: bolder
-  color: #B83A2D
+  color: #B83A2D !important
   animation: blink 1s infinite
+  background-color: #DCC9A9 !important
+  padding-left: 10px !important
+  padding-right: 10px !important
 
 .sidebar-row
   width: 100%

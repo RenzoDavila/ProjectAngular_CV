@@ -1,1 +1,4 @@
-<router-outlet></router-outlet>
+<div *ngIf="isLoading" class="loading-overlay">
+    <div class="pixel-loader">LOADING...</div>
+</div>
+<router-outlet [hidden]="isLoading"></router-outlet>

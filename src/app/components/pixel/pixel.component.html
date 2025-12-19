@@ -8,9 +8,9 @@
 </div>
 
 <div class="row m-0 decorations" [ngClass]="{'with-arrows' : decorationLength > 16}">
-  <div *ngFor="let item of decoration[decorationPag]"  class="col-3 p-0 tec">
-    <img *ngIf="(selectedPage$ | async)?.page == 'main'" class="pointer" title="{{item.name}}" alt="{{item.name}}" src="assets/icon/technologies/{{item.tag}}.svg" height="100%" width="100%" (click)="openTecInfo(item.name, item.description, item.tag)">
-    <img *ngIf="(selectedPage$ | async)?.page != 'main'" title="{{item.name}}" alt="{{item.name}}" src="assets/icon/technologies/{{item.tag}}.svg" height="100%" width="100%">
+  <div *ngFor="let item of decoration[decorationPag]" class="col-3 p-0 tec">
+    <img class="pointer" title="{{item.name}}" alt="{{item.name}}" src="assets/icon/technologies/{{item.tag}}.svg"
+      height="100%" width="auto" (click)="openTecInfo(item.name, item.description, item.tag)">
   </div>
   <div class="col-12 p-0 tec"></div>
   <div class="col-12 p-0 tec"></div>
@@ -23,7 +23,8 @@
   </div>
   <div *ngIf="!(this.decorationPag != 0)" class="col-5 p-0 arrow"></div>
   <div class="col-2 p-0 arrow"></div>
-  <div *ngIf="this.decorationPag != this.decorationPagination" class="col-5 p-0 d-flex align-items-center justify-content-start arrow">
+  <div *ngIf="this.decorationPag != this.decorationPagination"
+    class="col-5 p-0 d-flex align-items-center justify-content-start arrow">
     <img alt="siguiente.svg" title="siguiente" src="assets/icon/general/arrow-right.svg" (click)="changePag(1)">
   </div>
   <div *ngIf="!(this.decorationPag != this.decorationPagination)" class="col-5 p-0 arrow"></div>
@@ -36,13 +37,16 @@
     <img class="img" alt="{{(selectedPage$ | async)?.subPageItem}}" src="{{subScreen}}">
     <div class="pointer" (click)="openTextBox()" *ngIf="!working">
       <img class="img" alt="chair" src="assets/icon/general/chair.svg">
-      <img *ngIf="textBox" class="img opacity-animation" alt="text-balloon" src="assets/icon/texts-balloons/text-box.svg">
+      <img *ngIf="textBox" class="img opacity-animation" alt="text-balloon"
+        src="assets/icon/texts-balloons/text-box.svg">
     </div>
     <div class="pointer" (click)="openTextBox()" *ngIf="working">
       <img class="img" alt="me" src="assets/icon/general/me.svg">
-      <img *ngIf="textBox" class="img opacity-animation" alt="text-balloon" src="assets/icon/texts-balloons/text-balloon.svg">
+      <img *ngIf="textBox" class="img opacity-animation" alt="text-balloon"
+        src="assets/icon/texts-balloons/text-balloon.svg">
     </div>
-    <img (click)="openTextBox()" *ngIf="textBox" class="img opacity-animation pointer" alt="text-balloon" src="assets/icon/texts-balloons/{{textBoxMessage}}.svg">
+    <img (click)="openTextBox()" *ngIf="textBox" class="img opacity-animation pointer" alt="text-balloon"
+      src="assets/icon/texts-balloons/{{textBoxMessage}}.svg">
   </div>
 
 </div>

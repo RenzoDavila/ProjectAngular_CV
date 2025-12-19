@@ -1,0 +1,26 @@
+.loading-overlay
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background-color: #1a1a1a
+  z-index: 9999
+  display: flex
+  justify-content: center
+  align-items: center
+
+.pixel-loader
+  font-family: 'pixel', monospace
+  font-size: 40px
+  color: #DCC9A9
+  letter-spacing: 4px
+  animation: blink 0.5s step-end infinite
+
+@keyframes blink
+  0%
+    opacity: 1
+  50%
+    opacity: 0
+  100%
+    opacity: 1
