@@ -5,26 +5,33 @@
 
     <div class="row row-back p-0 m-4 mt-0 mb-0 d-flex align-items-center justify-content-center">
       <div class="col-6 arrow d-flex align-items-center justify-content-start cero">
-        <img *ngIf="(selectedPage$ | async)?.subPage != (selectedPage$ | async)?.subPageItem" alt="{{(selectedPage$ | async)?.subPage}}.svg" title="{{(selectedPage$ | async)?.subPage}}" src="assets/icon/{{(selectedPage$ | async)?.page}}/{{(selectedPage$ | async)?.subPage}}.svg">
-        <img class="ms-4" alt="{{(selectedPage$ | async)?.subPageItem}}.svg" title="{{(selectedPage$ | async)?.subPageItem}}" src="assets/icon/{{(selectedPage$ | async)?.page}}/{{(selectedPage$ | async)?.subPageItem}}.svg">
+        <img *ngIf="(selectedPage$ | async)?.subPage != (selectedPage$ | async)?.subPageItem"
+          alt="{{(selectedPage$ | async)?.subPage}}.svg" title="{{(selectedPage$ | async)?.subPage}}"
+          src="assets/icon/{{(selectedPage$ | async)?.page}}/{{(selectedPage$ | async)?.subPage}}.svg">
+        <img class="ms-4" alt="{{(selectedPage$ | async)?.subPageItem}}.svg"
+          title="{{(selectedPage$ | async)?.subPageItem}}"
+          src="assets/icon/{{(selectedPage$ | async)?.page}}/{{(selectedPage$ | async)?.subPageItem}}.svg">
       </div>
       <div class="col-6 arrow d-flex align-items-center justify-content-end cero opacity-animation">
-        <img class="pointer" alt="close.svg" title="close" src="assets/icon/general/close.svg"  (click)="close()">
+        <img class="pointer" alt="close.svg" title="close" src="assets/icon/general/close.svg" (click)="close()">
       </div>
     </div>
 
-    <div *ngIf="this.whitOutInfo" class="position-relative overflow-hidden p-4 m-3 mt-0 pt-0 mb-0 pb-0 text-center bg-transparent">
+    <div *ngIf="this.whitOutInfo"
+      class="position-relative overflow-hidden p-4 m-3 mt-0 pt-0 mb-0 pb-0 text-center bg-transparent">
       <div class="mx-auto">
         <h1 class="display-4 fw-normal">Sin Información</h1>
       </div>
     </div>
 
-    <div *ngIf="!this.whitOutInfo" class="position-relative overflow-hidden p-4 m-3 mt-0 pt-0 mb-0 pb-0 text-center bg-transparent">
+    <div *ngIf="!this.whitOutInfo"
+      class="position-relative overflow-hidden p-4 m-3 mt-0 pt-0 mb-0 pb-0 text-center bg-transparent">
       <div class="mx-auto">
         <h1 class="display-4 fw-bold">{{info.title}}</h1>
         <h2 class="display-8 fw-normal">{{info.position | translate}} ({{info.date | translate}})</h2>
         <hr>
-        <p class="lead fw-normal text-start" *ngFor="let description of info.description">{{description | translate}}</p>
+        <p class="lead fw-normal text-start" *ngFor="let description of info.description">{{description | translate}}
+        </p>
       </div>
       <div class="product-device shadow-sm d-none d-md-block"></div>
       <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
@@ -35,18 +42,22 @@
         <div class="col-12 bg-transparent p-2 pt-0 pb-0 text-center overflow-hidden">
           <div class="p-1">
             <p class="lead fw-normal text-start">Tareas:</p>
-              <p class="text-start ps-5" *ngFor="let task of info.tasks">•  {{task | translate}}</p>
+            <p class="text-start ps-5" *ngFor="let task of info.tasks">• {{task | translate}}</p>
           </div>
         </div>
-        <div *ngIf="info.images != 0" class="col-12 bg-transparent p-1 pb-0 text-center overflow-hidden d-flex align-items-center justify-content-center">
+        <div *ngIf="info.images != 0"
+          class="col-12 bg-transparent p-1 pb-0 text-center overflow-hidden d-flex align-items-center justify-content-center">
           <div class="ps-0 ps-lg-3 d-flex align-items-center justify-content-center expand-animation move">
-            <img class="pointer arrow-w" alt="anterior.svg" title="anterior" src="assets/icon/general/arrow-left.svg" (click)="arrowClick(-1)">
+            <img class="pointer arrow-w" alt="anterior.svg" title="anterior" src="assets/icon/general/arrow-left.svg"
+              (click)="arrowClick(-1)">
           </div>
           <div class="bg-transparent shadow-sm mx-auto d-flex align-items-center justify-content-center">
-            <img alt="{{info.id}}{{imageNum}}.jpg" title="{{info.id}}{{imageNum}}.jpg" src="assets/img/{{(selectedPage$ | async)?.page}}/{{info.id}}{{imageNum}}.jpg" width="100%">
+            <img alt="{{info.id}}{{imageNum}}.jpg" title="{{info.id}}{{imageNum}}.jpg"
+              src="assets/img/{{(selectedPage$ | async)?.page}}/{{info.id}}{{imageNum}}.jpg" width="100%">
           </div>
           <div class="pe-0 pe-lg-3 d-flex align-items-center justify-content-center expand-animation move">
-            <img class="pointer arrow-w" alt="siguiente.svg" title="siguiente" src="assets/icon/general/arrow-right.svg" (click)="arrowClick(1)">
+            <img class="pointer arrow-w" alt="siguiente.svg" title="siguiente" src="assets/icon/general/arrow-right.svg"
+              (click)="arrowClick(1)">
           </div>
         </div>
       </div>
@@ -54,17 +65,23 @@
 
     <div *ngIf="!this.whitOutInfo && info.sub">
       <div *ngFor="let section of subSections; index as i" class="d-md-flex p-4 m-3 mt-0 pt-0 mb-0 pb-0">
-        <div [ngClass]="{'bg-light' : isPair(i+1), 'bg-dark text-white' : !isPair(i+1), 'border-up-left border-up' : (i+1 == 1), 'border-down-left' : (i+1 == subSections.length), 'borderless-all ' : (i+1 != 1)}" class="p-1 pb-0 text-center overflow-hidden w-100">
+        <div
+          [ngClass]="{'bg-light' : isPair(i+1), 'bg-dark' : !isPair(i+1), 'border-up-left border-up' : (i+1 == 1), 'border-down-left' : (i+1 == subSections.length), 'borderless-all ' : (i+1 != 1)}"
+          class="p-1 pb-0 text-center overflow-hidden w-100">
           <div class="p-1">
             <h2 class="display-5">{{i+1}}/{{subSections.length}} - {{section.title}}</h2>
             <p class="lead" *ngFor="let description of section.description">{{description | translate}}</p>
             <p class="lead text-start">Tareas:</p>
-              <p class="text-start" *ngFor="let task of section.tasks">•  {{task | translate}}</p>
+            <p class="text-start" *ngFor="let task of section.tasks">• {{task | translate}}</p>
           </div>
         </div>
-        <div *ngIf="info.images != 0" [ngClass]="{'bg-dark bg-light-m' : isPair(i+1), 'bg-light bg-dark-m' : !isPair(i+1), 'border-up-right' : (i+1 == 1), 'bg-m border-down border-down-right' : (i+1 == subSections.length)}" class="p-1 pb-0 text-center overflow-hidden d-flex align-items-center justify-content-center w-100">
-          <div [ngClass]="{'bg-light bg-dark-m' : isPair(i+1), 'bg-dark bg-light-m' : !isPair(i+1)}" class="shadow-sm mx-auto d-flex align-items-center justify-content-center img-gallery">
-            <img alt="{{section.id}}{{imageNum}}.jpg" title="{{section.id}}{{imageNum}}" src="assets/img/{{(selectedPage$ | async)?.page}}/{{section.id}}{{imageNum}}.jpg" width="90%">
+        <div *ngIf="info.images != 0"
+          [ngClass]="{'bg-dark bg-light-m' : isPair(i+1), 'bg-light bg-dark-m' : !isPair(i+1), 'border-up-right' : (i+1 == 1), 'bg-m border-down border-down-right' : (i+1 == subSections.length)}"
+          class="p-1 pb-0 text-center overflow-hidden d-flex align-items-center justify-content-center w-100">
+          <div [ngClass]="{'bg-light bg-dark-m' : isPair(i+1), 'bg-dark bg-light-m' : !isPair(i+1)}"
+            class="shadow-sm mx-auto d-flex align-items-center justify-content-center img-gallery">
+            <img alt="{{section.id}}{{imageNum}}.jpg" title="{{section.id}}{{imageNum}}"
+              src="assets/img/{{(selectedPage$ | async)?.page}}/{{section.id}}{{imageNum}}.jpg" width="90%">
           </div>
         </div>
       </div>

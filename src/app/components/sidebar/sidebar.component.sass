@@ -1,34 +1,48 @@
-// Retro Styles
+// Retro Styles with New Palette
+@keyframes blink
+  0%
+    opacity: 1
+  50%
+    opacity: 0.8
+  100%
+    opacity: 1
+
 .sidebar
   width: 100%
   padding: 0px !important
-  border-right: 4px solid #fff // Border for the inventory panel
-  background-color: #000
+  border-right: 4px solid #DCC9A9 // Border for the inventory panel
+  background-color: #1a1a1a
 
 .active
-  background-color: #39ff14 !important // Neon green selection
-  color: #000 !important // Black text on green
+  background-color: #B83A2D !important // Red Accent (Selection)
+  color: #DCC9A9 !important // Beige Text
   font-weight: bolder
+  animation: blink 1s infinite // Blinking effect like in the navbar
 
 .nav-link
-  color: #fff
+  color: #DCC9A9
   border: 2px solid transparent
+  cursor: pointer
   &:hover
-    border: 2px solid #fff // Box selection effect
+    border: 2px solid #DCC9A9 // Box selection effect
+    animation: blink 0.5s infinite step-end // Faster blink on hover
 
 .subData
   padding-top: 3px
   padding-bottom: 3px
   text-decoration: none !important
-  border-left: 2px dashed #fff // Hierarchy indicator
+  border-left: 2px dashed #DCC9A9 // Hierarchy indicator
 
 .subData:hover
   a
     text-decoration: underline !important
+    color: #B83A2D !important // Highlight on hover
 
 .selected
   text-decoration: underline !important
   font-weight: bolder
+  color: #B83A2D
+  animation: blink 1s infinite
 
 .sidebar-row
   width: 100%
