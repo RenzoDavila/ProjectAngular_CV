@@ -1,5 +1,5 @@
 {
-  "name": "cv2022",
+  "name": "cv",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy-gh": "ng build --configuration production --base-href /RenzoDavila_CV/ && angular-cli-ghpages --dir=dist/cv2022"
+    "deploy-gh": "ng build --configuration production --base-href /RenzoDavila_CV/ && angular-cli-ghpages --dir=dist/cv"
   },
   "private": true,
   "dependencies": {
